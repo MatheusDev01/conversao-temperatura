@@ -11,7 +11,7 @@ on:
 jobs:
 
   # esse woekflow contém um único job chamado "build"
-  build:
+  CI:
   
   # tipo de runner
     runs-on: ubuntu-latest
@@ -21,10 +21,7 @@ jobs:
     
       - uses: actions/checkout@v2
       
-      - name: eRun a multi-line script
-        run: echo Hello, world!
-        
-      - name: Run a multi-line script
-        run:
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version: 16.13.2
