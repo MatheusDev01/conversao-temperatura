@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+    
+  workflow_dispstch:
+  
+jobs:
+
+  # esse woekflow contém um único job chamado "build"
+  build:
+  
+  # tipo de runner
+    runs-on: ubuntu-latest
+    
+    # sequencia de tarefas
+    steps:
+    
+      - uses: actions/checkout@v2
+      
+      - name: eRun a multi-line script
+        run: echo Hello, world!
+        
+      - name: Run a multi-line script
+        run:
+          echo Add other actions to build,
+          echo test, and deploy your project.
