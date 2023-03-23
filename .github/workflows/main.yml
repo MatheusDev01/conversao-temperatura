@@ -25,3 +25,9 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: 16.13.2
+          
+      - name: Instalação do mocha
+        run: |
+          cd src;
+          npm install -g mocha
+          npm install
